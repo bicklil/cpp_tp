@@ -43,3 +43,31 @@ void Init(Complexe& cpl){
   cpl.ident = i++;
 
 }
+
+void CreerComplexe(Complexe** pcomplexe){
+  *pcomplexe = new Complexe;
+  Init(**pcomplexe);
+}
+
+/*void CreerComplexe(ptComplexe& pcomplexe){
+  pcomplexe = new Complexe;
+  Init(**pcomplexe);
+}*/
+
+Complexe* CreerComplexe(){
+  ptComplexe pcom;
+  pcom = new Complexe;
+  Init(*pcom);
+  return pcom;
+}
+
+Complexe* CreerVecteurComplexes(unsigned int a){
+  ptComplexe ptcom;
+  ptcom = new Complexe[a];
+  int i= 0;
+  for (i=0;i<a;i++){
+    Init(ptcom[i]);
+    cout << &ptcom[i] << '\n';
+  }
+return ptcom;
+}

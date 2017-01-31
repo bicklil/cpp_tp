@@ -5,17 +5,30 @@ using namespace std;
 
 
 int main(int argc, char const *argv[]) {
-  int x = 8, y = 20;
+  Complexe* pcpl ;
+  CreerComplexe(&pcpl);
+  AfficherComplexe(*pcpl);
+  delete(pcpl);
+
+  /*CreerComplexe(pcpl);
+  cout << pcpl << "\n";
+  AfficherComplexe(**pcpl);
+  ptComplexe pcom= CreerComplexe();
+  cout << pcom<< "\n";
+  delete(pcom);
+  delete(pcpl);
+  CreerVecteurComplexes(5);*/
+  /*int x = 8, y = 20;
   cout << x << " " << y << "\n";
   Permuter(x,y);
   cout << x << " " << y << "\n";
-  static Complexe cpl1,cpl2;
+  Complexe cpl1,cpl2;
   Init(cpl1);
   Init(cpl2);
   cpl1.a = 5;
   cpl1.b = 12;
   cout << cpl1.ident << "\n";
-  cout << cpl2.ident << "\n";
+  cout << cpl2.ident << "\n";*/
   /*cpl2.a = 8;
   cpl2.b = 15;
   Permuter(cpl1,cpl2);
