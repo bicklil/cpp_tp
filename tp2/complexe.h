@@ -15,6 +15,7 @@ public:
   void modRe(float);
   void modIm(float);
   void Print();
+  Complexe Sum(const Complexe&);
   void Sum1(const Complexe&);
   Complexe Sum2(const Complexe&);
   Complexe Sum3(const Complexe&);

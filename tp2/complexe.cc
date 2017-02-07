@@ -51,6 +51,11 @@ void Complexe::Print(){
 }
 
 
+Complexe Complexe::Sum(const Complexe& cplx){
+  return Complexe(re+cplx.re, im+cplx.im);
+}
+
+
 void Complexe::Sum1(const Complexe& cplx){
   re = re + cplx.re;
   im = im + cplx.im;
