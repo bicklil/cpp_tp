@@ -50,7 +50,8 @@ void Complexe::Print(){
   cout << "re : " << re << " im : "<< im << endl;
 }
 
-
+//duree de vie : temps d'appel de la fonction si pas sauvegardé dans une variable
+// utile pour un print tempo, debug, 
 Complexe Complexe::Sum(const Complexe& cplx){
   return Complexe(re+cplx.re, im+cplx.im);
 }

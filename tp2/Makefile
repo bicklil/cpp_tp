@@ -10,7 +10,7 @@ libComplexe.a: complexe.o
 	ar cr libComplexe.a complexe.o
 	ranlib libComplexe.a
 
-main.o: main.cc 
+main.o: main.cc
 	$(CC) -c main.cc
 
 complexe.o: complexe.cc complexe.h
