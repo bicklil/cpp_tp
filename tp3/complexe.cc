@@ -92,3 +92,31 @@ bool Complexe::Identical(const Complexe& cplx){
     }
   return false;
 }
+
+Complexe& Complexe::operator=(const Complexe& cpl){
+im=cpl.im;
+re= cpl.re;
+return *this;
+}
+
+Complexe Complexe::operator+(const Complexe& cpl){
+  Complexe res;
+  res.re = cpl.re + re;
+  res.im = cpl.im + im;
+  return res;
+}
+
+Complexe Complexe::operator-(const Complexe& cpl){
+  Complexe res;
+  res.re = cpl.re - re;
+  res.im = cpl.im - im;
+  return res;
+}
+
+Complexe Complexe::operator*(const Complexe& cpl){
+  Complexe c;
+  c.re = (re*cpl.re)-(im*cpl.im);
+  c.im = (re*cpl.im)+(im*cpl.re);
+
+  return c;
+}

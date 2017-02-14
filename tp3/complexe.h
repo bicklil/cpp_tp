@@ -21,6 +21,10 @@ public:
   Complexe Sum3(const Complexe&);
   Complexe& Sum4(const Complexe&);
   bool Identical(const Complexe&);
+  Complexe& operator=(const Complexe& );
+  Complexe operator+(const Complexe&);
+  Complexe operator-(const Complexe&);
+  Complexe operator*(const Complexe&);
 
 };
 
