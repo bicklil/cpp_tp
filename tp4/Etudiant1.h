@@ -18,6 +18,7 @@ class Etudiant1: public Personne
     void Affic();
     void ajouterNotes(int*);
     float moyenne();
+    Etudiant1& operator=(const Etudiant1&);
 
 };
 

@@ -36,3 +36,11 @@ float Etudiant1::moyenne(){
     moy = moy + notes[i];
   return moy /nb;
 }
+
+Etudiant1& Etudiant1::operator=(const Etudiant1& etu){
+  nb = etu.nb;
+  notes = new int[nb];
+  for(int i;i<nb;i++)
+    notes[i]=etu.notes[i];
+  return *this;
+}
