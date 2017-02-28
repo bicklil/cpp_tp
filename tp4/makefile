@@ -1,5 +1,5 @@
 CC=g++
-OBJ=Personne.o test.o Professeur.o
+OBJ=Personne.o test.o Professeur.o Etudiant1.o
 
 test.exe: $(OBJ)
 	$(CC) $(OBJ) -o test.exe
@@ -10,9 +10,11 @@ test.o: test.cc Personne.h
 Personne.o:Personne.cc Personne.h
 	$(CC) -c Personne.cc
 
-Professeur.o: Professeur.cc Professeur.h
+Professeur.o: Professeur.cc Professeur.h Personne.h
 	$(CC) -c Professeur.cc
-	
+
+Etudiant1.o: Etudiant1.h Etudiant1.cc Personne.h
+	$(CC) -c Etudiant1.cc
 clean:
 	rm -rf *.o
 	rm -rf *.exe
