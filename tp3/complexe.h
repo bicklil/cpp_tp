@@ -1,6 +1,9 @@
 #ifndef complexe
 #define  complexe
 
+#include <iostream>
+using namespace std;
+
 class Complexe{
 private:
   float re;
@@ -25,6 +28,10 @@ public:
   Complexe operator+(const Complexe&);
   Complexe operator-(const Complexe&);
   Complexe operator*(const Complexe&);
+  Complexe operator/(const Complexe&);
+  Complexe operator*(const int&);
+  friend Complexe operator*(const int&, const Complexe&);
+  friend ostream& operator<<(ostream& ,const Complexe&);
 
 };
 

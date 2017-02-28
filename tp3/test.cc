@@ -5,9 +5,7 @@ using namespace std;
 
 
 int main(int argc, char const *argv[]) {
-  ifstream fichier("txt.txt");
-
-  VecteurComplexe test(fichier);
-  test.affiche();
+  Complexe c1(5,4);
+  cout << c1;
   return 0;
 }

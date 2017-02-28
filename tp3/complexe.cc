@@ -120,3 +120,30 @@ Complexe Complexe::operator*(const Complexe& cpl){
 
   return c;
 }
+
+Complexe Complexe::operator/(const Complexe& cpl){
+  Complexe c(0,0);
+  if (c.re == cpl.re)
+  {
+    if (c.re == cpl.re)
+      return c;
+  }
+  c.re = (re*cpl.re + im*cpl.im)/(re*re + cpl.re*cpl.re);
+  c.im = (im*cpl.re - re*cpl.im)/(re*re + cpl.re*cpl.re);
+
+  return c;
+}
+
+Complexe Complexe::operator*(const int& ab){
+  return Complexe(re*ab, im*ab);
+
+}
+
+Complexe operator*(const int& ab, const Complexe& cpl){
+  return Complexe(cpl.re*ab, cpl.im*ab);
+}
+
+ostream & operator<<(ostream& o,const Complexe& cpl){
+  o << "re : " << cpl.re << " im : "<< cpl.im << endl;
+  return o;
+}
