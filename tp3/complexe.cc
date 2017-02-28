@@ -128,8 +128,8 @@ Complexe Complexe::operator/(const Complexe& cpl){
     if (c.re == cpl.re)
       return c;
   }
-  c.re = (re*cpl.re + im*cpl.im)/(re*re + cpl.re*cpl.re);
-  c.im = (im*cpl.re - re*cpl.im)/(re*re + cpl.re*cpl.re);
+  c.re = (re*cpl.re + im*cpl.im)/(cpl.re*cpl.re + cpl.im*cpl.im);
+  c.im = (im*cpl.re - re*cpl.im)/(cpl.re*cpl.re + cpl.im*cpl.im);
 
   return c;
 }
