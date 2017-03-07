@@ -15,6 +15,13 @@ Professeur.o: Professeur.cc Professeur.h Personne.h
 
 Etudiant1.o: Etudiant1.h Etudiant1.cc Personne.h
 	$(CC) -c Etudiant1.cc
+
+Matiere.o: Matiere.h Matiere.cc
+	$(CC) -c Matiere.cc
+
+Etudiant2.o: Etudiant2.h Etudiant2.cc
+	$(CC) -c Etudiant2.cc
+
 clean:
 	rm -rf *.o
 	rm -rf *.exe

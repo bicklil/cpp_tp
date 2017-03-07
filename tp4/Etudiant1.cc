@@ -21,8 +21,12 @@ Etudiant1::~Etudiant1(){
 }
 
 void Etudiant1::Affic(){
-  Personne::Affic();
-  cout << nb << endl;
+  cout << nom << " "<< prenom;
+  for(int i=0;i<nb;i++)
+  {
+    cout << " " << notes[i];
+  }
+  cout << endl;
 }
 
 void Etudiant1::ajouterNotes(int* tab){
@@ -38,6 +42,9 @@ float Etudiant1::moyenne(){
 }
 
 Etudiant1& Etudiant1::operator=(const Etudiant1& etu){
+  nom = etu.nom;
+  prenom = etu.prenom;
+  age= etu.age;
   nb = etu.nb;
   notes = new int[nb];
   for(int i;i<nb;i++)

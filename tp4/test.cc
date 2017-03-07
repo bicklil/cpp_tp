@@ -1,14 +1,25 @@
 #include "Etudiant1.h"
+#include "Professeur.h"
+#include "Personne.h"
 #include <iostream>
-using namespace std;
-int main(int argc, char const *argv[]){
 
-  Etudiant1 etu("jacquie","michel",20, 2),etu1("jacquie","michel",200, 8);
-  etu1=etu;
+using namespace std;
+
+int main(int argc, char const *argv[]){
+  Personne perso1("Dorian","Gray",30);
+  Etudiant1 etu1("Harry","Potter",15, 4);
+  Professeur prof1("Severus","Rogue",50,"titulaire");
+  int notes[4] = {12,9,15,14};
+
+  perso1.vieillir();
+  perso1.Affic();
+
+  prof1.Travailler(200);
+  prof1.Affic();
+
+  etu1.ajouterNotes(notes);
   etu1.Affic();
-  int tab[2] = {5,7};
-  etu.ajouterNotes(tab);
-  etu.Affic();
-  cout << etu.moyenne() << endl;
+  cout << etu1.moyenne()<< endl;
+
   return 0;
 }
