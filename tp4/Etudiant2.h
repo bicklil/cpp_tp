@@ -16,7 +16,7 @@ class Etudiant2 : public Etudiant1
     Etudiant2(const Etudiant2&);
     ~Etudiant2();
     void Affic();
-    int Moyenne();
+    float Moyenne();
     Etudiant2& operator=(const Etudiant2&);
 };
 

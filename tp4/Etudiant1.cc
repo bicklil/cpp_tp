@@ -6,12 +6,12 @@ using namespace std;
 Etudiant1::Etudiant1(string name,string fname ,int old ,int nbn):Personne(name,fname,old)
 {
   nb = nbn;
-  notes = new int[nb];
+  notes = new float[nb];
 }
 
 Etudiant1::Etudiant1(const Etudiant1& etu):Personne(etu){
   nb = etu.nb;
-  notes = new int[nb];
+  notes = new float[nb];
   for(int i;i<nb;i++)
     notes[i]=etu.notes[i];
 }
@@ -29,12 +29,12 @@ void Etudiant1::Affic(){
   cout << endl;
 }
 
-void Etudiant1::ajouterNotes(int* tab){
+void Etudiant1::ajouterNotes(float* tab){
   for(int i=0;i<nb;i++)
     notes[i] = tab[i];
 }
 
-float Etudiant1::moyenne(){
+float Etudiant1::Moyenne(){
   float moy = 0;
   for(int i=0;i<nb;i++)
     moy = moy + notes[i];
@@ -42,12 +42,23 @@ float Etudiant1::moyenne(){
 }
 
 Etudiant1& Etudiant1::operator=(const Etudiant1& etu){
-  nom = etu.nom;
-  prenom = etu.prenom;
-  age= etu.age;
-  nb = etu.nb;
-  notes = new int[nb];
-  for(int i;i<nb;i++)
-    notes[i]=etu.notes[i];
+  if (this != &etu)
+  {
+    this->Personne::operator=(etu);
+    delete [] notes;
+    nb = etu.nb;
+    notes = new float[nb];
+    for(int i;i<nb;i++)
+      notes[i]=etu.notes[i];
+  }
   return *this;
+
+}
+
+int Etudiant1::GetNb()const{
+  return nb;
+}
+
+float* Etudiant1::GetNotes()const{
+  return notes;
 }

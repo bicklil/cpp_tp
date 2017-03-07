@@ -10,8 +10,8 @@ Etudiant2::Etudiant2(string name,string pname,int old ,int nbnote ,Matiere* tabm
 }
 
 Etudiant2::Etudiant2(const Etudiant2& etud2):Etudiant1(etud2){
-  tabMatiere = new Matiere[etud2.nb];
-  for(int i=0;i<etud2.nb;i++)
+  tabMatiere = new Matiere[this->GetNb()];
+  for(int i=0;i< this->GetNb() ;i++)
     tabMatiere[i] = etud2.tabMatiere[i];
 }
 
@@ -20,8 +20,36 @@ Etudiant2::~Etudiant2(){
 }
 
 void Etudiant2::Affic(){
-    Etudiant1::Affic();
+    float *notes = this->GetNotes();
+    cout << nom << " " << prenom << " " << endl;
+    for (int i=0;i<this->GetNb();i++)
+    {
+      cout << tabMatiere[i].GetNom() << " " << notes[i] << endl;
+    }
 }
 
-//int Etudiant2::Moyenne();
-//Etudiant2& operator=(const Etudiant2&);
+float Etudiant2::Moyenne(){
+  float moyenne = 0;
+  int coefTotal = 0;
+  float* note = this->GetNotes();
+  for(int i=0;i<this->GetNb();i++)
+  {
+    moyenne = moyenne + ( note[i] * tabMatiere[i].GetCoef());
+    coefTotal = coefTotal + tabMatiere[i].GetCoef();
+  }
+  return moyenne/coefTotal;
+}
+
+Etudiant2& Etudiant2::operator=(const Etudiant2& etud2) {
+  if (this != &etud2)
+  {
+    this->Etudiant1::operator=(etud2);
+    delete [] tabMatiere;
+    tabMatiere = new Matiere[this->GetNb()];
+    for(int i=0;i<this->GetNb();i++)
+    {
+      tabMatiere[i] = etud2.tabMatiere[i];
+    }
+  }
+  return *this;
+}

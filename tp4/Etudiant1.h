@@ -9,15 +9,17 @@ class Etudiant1: public Personne
 {
   private:
     int nb;
-    int* notes;
+    float* notes;
 
   public:
     Etudiant1(string,string,int,int);
     Etudiant1(const Etudiant1&);
     ~Etudiant1();
+    int GetNb()const;
+    float* GetNotes()const;
     void Affic();
-    void ajouterNotes(int*);
-    float moyenne();
+    void ajouterNotes(float*);
+    float Moyenne();
     Etudiant1& operator=(const Etudiant1&);
 
 };

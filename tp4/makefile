@@ -1,5 +1,5 @@
 CC=g++
-OBJ=Personne.o test.o Professeur.o Etudiant1.o
+OBJ=Personne.o test.o Professeur.o Etudiant1.o Matiere.o Etudiant2.o
 
 test.exe: $(OBJ)
 	$(CC) $(OBJ) -o test.exe
@@ -19,7 +19,7 @@ Etudiant1.o: Etudiant1.h Etudiant1.cc Personne.h
 Matiere.o: Matiere.h Matiere.cc
 	$(CC) -c Matiere.cc
 
-Etudiant2.o: Etudiant2.h Etudiant2.cc
+Etudiant2.o: Etudiant2.h Etudiant2.cc Etudiant1.h
 	$(CC) -c Etudiant2.cc
 
 clean:

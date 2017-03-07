@@ -1,25 +1,25 @@
 #include "Etudiant1.h"
 #include "Professeur.h"
 #include "Personne.h"
+#include "Matiere.h"
+#include "Etudiant2.h"
 #include <iostream>
 
 using namespace std;
 
 int main(int argc, char const *argv[]){
-  Personne perso1("Dorian","Gray",30);
-  Etudiant1 etu1("Harry","Potter",15, 4);
-  Professeur prof1("Severus","Rogue",50,"titulaire");
-  int notes[4] = {12,9,15,14};
+  Matiere* tabmat = new Matiere[4];
+  tabmat[0] = Matiere("Magie",3);
+  tabmat[1] = Matiere("Potion",2);
+  tabmat[2] = Matiere("Divination",4);
+  tabmat[3] =  Matiere("Info",1);
+  Etudiant2 etu("Harry","Potter",15, 4, tabmat);
 
-  perso1.vieillir();
-  perso1.Affic();
+  float notes[4] = {12,9,15,14};
+  etu.ajouterNotes(notes);
+  etu.Affic();
+  cout << etu.Moyenne() <<endl;
 
-  prof1.Travailler(200);
-  prof1.Affic();
-
-  etu1.ajouterNotes(notes);
-  etu1.Affic();
-  cout << etu1.moyenne()<< endl;
 
   return 0;
 }
